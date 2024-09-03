@@ -1,0 +1,127 @@
+.About {
+  padding: 1.5rem;
+
+  .section {
+    display: flex;
+    flex-direction: column; // Default for mobile and small screens
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 1.5rem;
+
+    .inner-section {
+      display: flex;
+      flex-direction: column; // Default for mobile and tablet screens
+      align-items: center;
+      gap: 1rem;
+
+      .image {
+        width: 100%;
+        max-width: 500px;
+        height: auto; // Maintain aspect ratio
+        border-radius: 4px;
+      }
+
+      .text {
+        width: 100%;
+        margin: 0 auto;
+        flex: 1;
+        text-align: center; // Center text on smaller screens
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  h2, h3 {
+    font-size: 1.5rem; // Smaller font size for mobile
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f2f2f2;
+    padding: 7px 10px;
+    text-align: center;
+
+    span {
+      color: #007BFF;
+    }
+  }
+
+  p {
+    font-size: 0.9rem; // Smaller font size for mobile
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 2rem; // Slightly increase padding for better spacing
+
+    .section {
+      flex-direction: column; // Keep column direction for tablets
+      align-items: center; // Align items to center
+      text-align: center;
+
+      .inner-section {
+        flex: 1; // Ensure sections divide evenly
+        flex-direction: column; // Maintain column direction for tablets
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem; // Reduced space between image and text
+
+        .image {
+          max-width: 300px; // Adjust image size for tablets
+        }
+
+        .text {
+          height: auto;
+          overflow-y: hidden;
+          margin: 0 20px;
+        }
+      }
+    }
+
+    h2, h3 {
+      font-size: 1.8rem; // Larger font size for tablet
+    }
+
+    p {
+      font-size: 1rem; // Increase paragraph font size
+      line-height: 1.5;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 3rem;
+
+    .section {
+      flex-direction: column; // Center the entire section for desktops
+      align-items: center;
+      gap: 1.5rem; // Reduced gap for desktop
+
+      .inner-section {
+        flex-direction: row; // Row direction for desktops and laptops
+        align-items: center; // Center image and text vertically
+        justify-content: center; // Center content horizontally
+        gap: 1rem; // Reduce space between image and text
+
+        .image {
+          max-width: 500px; // Larger image size for desktop
+        }
+
+        .text {
+          text-align: left;
+          height: auto;
+          margin: 0 20px;
+        }
+      }
+    }
+
+    h2, h3 {
+      font-size: 2rem; // Larger font size for desktop
+    }
+
+    p {
+      font-size: 1.1rem; // Increase paragraph font size
+      line-height: 1.6;
+    }
+  }
+}
